@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script src="../script/mazetest.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="flex flex-col min-h-screen bg-stone-50">
+        <header class="h-10 bg-stone-200">
+            <nav class="flex flex-row h-full items-center border-b-1 border-stone-300">
+                <img src="11 - Labyrint.png" class="h-10">
+                <ul class="flex flex-row gap-4 ml-4">
+                    <li><a class="hover:underline" href="index.html">Home</a></li>
+                    <li><a class="hover:underline" href="segments.html">Maze segments</a></li>
+                    <li><a class="hover:underline" href="about.html">About</a></li>
+                </ul>
+                <button class="flex ml-auto mr-4 p-1 border border-black ">Login</button>
+            </nav>
+        </header>
+        <div class="flex flex-col mx-16 bg-stone-100">
+            <canvas id="maze" width="2000" height="1000" class="shadow-sm flex mx-auto"></canvas>
+        </div>
+
+        <div id="mazeplace"></div>
+
+        <p id="roomcount"></p>
+        <button onclick="LoadSegments()">Load those images!</button>
+        <button onclick="CreateMaze()">Create that maze
+            already!</button>
+
+        <footer class="bg-stone-800 text-sm text-stone-100">
+            <p>
+                The maze generator
+            </p>
+            <p>
+                by Jim
+            </p>
+        </footer>
+    </div>
+</body>
+
+</html>

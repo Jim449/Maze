@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="flex flex-col min-h-screen bg-stone-50">
+        <header class="h-10 bg-stone-200">
+            <nav class="flex flex-row h-full items-center border-b-1 border-stone-300">
+                <img src="11 - Labyrint.png" class="h-10">
+                <ul class="flex flex-row gap-4 ml-4">
+                    <li><a class="hover:underline" href="index.html">Home</a></li>
+                    <li><a class="hover:underline" href="maze.html">Maze</a></li>
+                    <li><a class="hover:underline" href="segments.html">Maze segments</a></li>
+                    <li><a class="hover:underline" href="about.html">About</a></li>
+                </ul>
+                <button class="flex ml-auto mr-4 p-1 border border-black hover:underline">Login</button>
+            </nav>
+        </header>
+        <div class="mx-16 flex flex-col items-center bg-stone-100">
+            <h1 class="flex text-xl p-4">The maze generator</h1>
+            <form class="flex flex-col">
+                <p class="my-2">
+                    <label for="area-amount">Amount of maze areas</label>
+                    <br>
+                    <select id="area-amount" name="area-amount">
+                        <option value="1">Single area</option>
+                        <option value="2">2x2 areas</option>
+                        <option value="3">3x3 areas</option>
+                        <option value="4">4x4 areas</option>
+                        <option value="5">5x5 areas</option>
+                    </select>
+                </p>
+                <p class="my-2">
+                    <label for="area-size">Size of maze areas</label>
+                    <br>
+                    <select id="area-size" name="area-size">
+                        <option value="1">Single room</option>
+                        <option value="2">2x2 rooms</option>
+                        <option value="3">3x3 rooms</option>
+                        <option value="4">4x4 rooms</option>
+                        <option value="5">5x5 rooms</option>
+                    </select>
+                </p>
+                <p class="my-2">
+                    <label for="randomize-areas">Randomize area locations</label>
+                    <input type="checkbox" id="randomize-areas" name="randomize-areas"></checkbox>
+                </p>
+                <p class="my-2">
+                    <button class="p-1 border border-black"><a href="maze.html">Generate maze</a></button>
+                </p>
+            </form>
+            <hr class="w-full m-4 bg-stone-200">
+            <h2 class="text-lg p-4">Connections of maze areas</h2>
+            <div class="grid grid-cols-9 gap-0 mx-auto align-center text-stone-200 bg-stone-800 text-xs">
+                <button class="bg-black border border-stone-800 w-10 h-10">1</button>
+                <button class="bg-black border border-stone-800 w-10 h-10">
+                    &rightarrow;<br>1
+                </button>
+                <button class="bg-black border border-stone-800 w-10 h-10">2</button>
+                <button class="bg-black border border-stone-800 w-10 h-10">
+                    &leftrightarrow;<br>x
+                </button>
+                <button class="bg-black border border-stone-800 w-10 h-10">3</button>
+                <button class="bg-black border border-stone-800 w-10 h-10"></button>
+                <button class="bg-black border border-stone-800 w-10 h-10">4</button>
+                <button class="bg-black border border-stone-800 w-10 h-10"></button>
+                <button class="bg-black border border-stone-800 w-10 h-10">5</button>
+                <!-- Next row! -->
+                <button class="bg-black border border-stone-800 w-10 h-10 col-start-1">
+                    &downarrow;<br>2
+                </button>
+                <button class="bg-black border border-stone-800 w-10 h-10 col-start-3">
+                    &updownarrow;<br>1
+                </button>
+                <button class="bg-black border border-stone-800 w-10 h-10 col-start-5"></button>
+                <button class="bg-black border border-stone-800 w-10 h-10 col-start-7"></button>
+                <button class="bg-black border border-stone-800 w-10 h-10 col-start-9"></button>
+                <!-- Row 2! -->
+                <button class="bg-black border border-stone-800 w-10 h-10">6</button>
+                <button class="bg-black border border-stone-800 w-10 h-10"></button>
+                <button class="bg-black border border-stone-800 w-10 h-10">7</button>
+                <button class="bg-black border border-stone-800 w-10 h-10"></button>
+                <button class="bg-black border border-stone-800 w-10 h-10">8</button>
+                <button class="bg-black border border-stone-800 w-10 h-10"></button>
+                <button class="bg-black border border-stone-800 w-10 h-10">9</button>
+                <button class="bg-black border border-stone-800 w-10 h-10"></button>
+                <button class="bg-black border border-stone-800 w-10 h-10">10</button>
+                <!-- Next row! -->
+                <button class="bg-black border border-stone-800 w-10 h-10 col-start-1"></button>
+                <button class="bg-black border border-stone-800 w-10 h-10 col-start-3"></button>
+                <button class="bg-black border border-stone-800 w-10 h-10 col-start-5"></button>
+                <button class="bg-black border border-stone-800 w-10 h-10 col-start-7"></button>
+                <button class="bg-black border border-stone-800 w-10 h-10 col-start-9"></button>
+                <!-- Row 3! -->
+                <button class="bg-black border border-stone-800 w-10 h-10">11</button>
+                <button class="bg-black border border-stone-800 w-10 h-10"></button>
+                <button class="bg-black border border-stone-800 w-10 h-10">12</button>
+                <button class="bg-black border border-stone-800 w-10 h-10"></button>
+                <button class="bg-black border border-stone-800 w-10 h-10">13</button>
+                <button class="bg-black border border-stone-800 w-10 h-10"></button>
+                <button class="bg-black border border-stone-800 w-10 h-10">14</button>
+                <button class="bg-black border border-stone-800 w-10 h-10"></button>
+                <button class="bg-black border border-stone-800 w-10 h-10">15</button>
+                <!-- Next row! -->
+                <button class="bg-black border border-stone-800 w-10 h-10 col-start-1"></button>
+                <button class="bg-black border border-stone-800 w-10 h-10 col-start-3"></button>
+                <button class="bg-black border border-stone-800 w-10 h-10 col-start-5"></button>
+                <button class="bg-black border border-stone-800 w-10 h-10 col-start-7"></button>
+                <button class="bg-black border border-stone-800 w-10 h-10 col-start-9"></button>
+                <!-- Row 4! -->
+                <button class="bg-black border border-stone-800 w-10 h-10">16</button>
+                <button class="bg-black border border-stone-800 w-10 h-10"></button>
+                <button class="bg-black border border-stone-800 w-10 h-10">17</button>
+                <button class="bg-black border border-stone-800 w-10 h-10"></button>
+                <button class="bg-black border border-stone-800 w-10 h-10">18</button>
+                <button class="bg-black border border-stone-800 w-10 h-10"></button>
+                <button class="bg-black border border-stone-800 w-10 h-10">19</button>
+                <button class="bg-black border border-stone-800 w-10 h-10"></button>
+                <button class="bg-black border border-stone-800 w-10 h-10">20</button>
+                <!-- Next row! -->
+                <button class="bg-black border border-stone-800 w-10 h-10 col-start-1"></button>
+                <button class="bg-black border border-stone-800 w-10 h-10 col-start-3"></button>
+                <button class="bg-black border border-stone-800 w-10 h-10 col-start-5"></button>
+                <button class="bg-black border border-stone-800 w-10 h-10 col-start-7"></button>
+                <button class="bg-black border border-stone-800 w-10 h-10 col-start-9"></button>
+                <!-- Row 5! -->
+                <button class="bg-black border border-stone-800 w-10 h-10">21</button>
+                <button class="bg-black border border-stone-800 w-10 h-10"></button>
+                <button class="bg-black border border-stone-800 w-10 h-10">22</button>
+                <button class="bg-black border border-stone-800 w-10 h-10"></button>
+                <button class="bg-black border border-stone-800 w-10 h-10">23</button>
+                <button class="bg-black border border-stone-800 w-10 h-10"></button>
+                <button class="bg-black border border-stone-800 w-10 h-10">24</button>
+                <button class="bg-black border border-stone-800 w-10 h-10"></button>
+                <button class="bg-black border border-stone-800 w-10 h-10">25</button>
+            </div>
+            <p class="text-xs my-2">Click on connection to change type<br>
+                &rightarrow;: one-way path<br>
+                &leftrightarrow;: regular path<br>
+                #: maximum amount of paths<br>
+                x: random amount of paths</p>
+            <hr class="w-full m-4 bg-stone-200">
+        </div>
+
+        <footer class="bg-stone-800 text-sm text-stone-100">
+            <p>
+                The maze generator
+            </p>
+            <p>
+                by Jim
+            </p>
+        </footer>
+    </div>
+</body>
+
+</html>
